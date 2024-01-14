@@ -1,0 +1,7 @@
+*.pyc
+venv/
+**/dist
+**/venv
+**/node_modules
+/function/magia2sv/magia/
+/function/magia2sv/syn_magia-**.dist-info/

@@ -1,0 +1,6 @@
+name: online-syn
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Serverless Service for Circuit Synthesis

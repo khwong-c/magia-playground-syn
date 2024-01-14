@@ -1,0 +1,419 @@
+{
+  "creator": "Yosys 0.9 (git sha1 1979e0b)",
+  "modules": {
+    "fulladder": {
+      "attributes": {
+        "src": "a.sv:15"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "o": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "$or$a.sv:28$3": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "a.sv:28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 8 ],
+            "Y": [ 6 ]
+          }
+        },
+        "ha1": {
+          "hide_name": 0,
+          "type": "halfadder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:25"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 2 ],
+            "b": [ 3 ],
+            "c": [ 7 ],
+            "o": [ 9 ]
+          }
+        },
+        "ha2": {
+          "hide_name": 0,
+          "type": "halfadder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:26"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 9 ],
+            "b": [ 4 ],
+            "c": [ 8 ],
+            "o": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "a.sv:16"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "a.sv:17"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "a.sv:20"
+          }
+        },
+        "c1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "a.sv:23"
+          }
+        },
+        "c2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "a.sv:23"
+          }
+        },
+        "d": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "a.sv:18"
+          }
+        },
+        "o": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "a.sv:19"
+          }
+        },
+        "t": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "a.sv:23"
+          }
+        }
+      }
+    },
+    "halfadder": {
+      "attributes": {
+        "src": "a.sv:2"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "o": {
+          "direction": "output",
+          "bits": [ 4 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$and$a.sv:10$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "a.sv:10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 5 ]
+          }
+        },
+        "$xor$a.sv:9$1": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "a.sv:9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 4 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "a.sv:3"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "a.sv:4"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "a.sv:6"
+          }
+        },
+        "o": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "a.sv:5"
+          }
+        }
+      }
+    },
+    "serialadder": {
+      "attributes": {
+        "dynports": 1,
+        "top": 1,
+        "src": "a.sv:33"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 6, 7, 8, 9 ]
+        },
+        "o": {
+          "direction": "output",
+          "bits": [ 10, 11, 12, 13, 14 ]
+        }
+      },
+      "cells": {
+        "$genblock$a.sv:47$4[0].\\fa": {
+          "hide_name": 1,
+          "type": "fulladder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:49"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "d": "input",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 2 ],
+            "b": [ 6 ],
+            "c": [ 15 ],
+            "d": [ "0" ],
+            "o": [ 10 ]
+          }
+        },
+        "$genblock$a.sv:47$5[1].\\fa": {
+          "hide_name": 1,
+          "type": "fulladder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:49"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "d": "input",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 3 ],
+            "b": [ 7 ],
+            "c": [ 16 ],
+            "d": [ 15 ],
+            "o": [ 11 ]
+          }
+        },
+        "$genblock$a.sv:47$6[2].\\fa": {
+          "hide_name": 1,
+          "type": "fulladder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:49"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "d": "input",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 4 ],
+            "b": [ 8 ],
+            "c": [ 17 ],
+            "d": [ 16 ],
+            "o": [ 12 ]
+          }
+        },
+        "$genblock$a.sv:47$7[3].\\fa": {
+          "hide_name": 1,
+          "type": "fulladder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "a.sv:49"
+          },
+          "port_directions": {
+            "a": "input",
+            "b": "input",
+            "c": "output",
+            "d": "input",
+            "o": "output"
+          },
+          "connections": {
+            "a": [ 5 ],
+            "b": [ 9 ],
+            "c": [ 14 ],
+            "d": [ 17 ],
+            "o": [ 13 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "a.sv:35"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "a.sv:36"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ "0", 15, 16, 17, 14 ],
+          "attributes": {
+            "src": "a.sv:40"
+          }
+        },
+        "o": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13, 14 ],
+          "attributes": {
+            "src": "a.sv:37"
+          }
+        },
+        "s": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "a.sv:41"
+          }
+        }
+      }
+    }
+  }
+}
