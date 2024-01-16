@@ -347,13 +347,23 @@ export const handler = async (event, context): Promise<APIGatewayProxyResult> =>
             {}
         );
         return {
-            statusCode: 400,
+            statusCode: 200,
             body: JSON.stringify(reduced),
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD",
+                "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent",
+            },
         };
     }).catch((err) => {
         return {
-            statusCode: 400,
+            statusCode: 500,
             body: err,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD",
+                "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent",
+            },
         }
     });
 }

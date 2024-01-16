@@ -7,7 +7,14 @@ from datetime import datetime
 from tempfile import NamedTemporaryFile
 from pathlib import Path
 
-DEFAULT_SYNTHESIS_SCRIPT = "hierarchy -auto-top; proc; opt -full; fsm -expand; memory -nomap; wreduce -memx optimize;"
+DEFAULT_SYNTHESIS_SCRIPT = "proc; opt -full; fsm -expand; memory -nomap; wreduce -memx optimize;"
+CORS_HEADERS = {
+    "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD",
+            "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent",
+    },
+}
 
 
 def handler(event, context):
@@ -18,6 +25,7 @@ def handler(event, context):
             return {
                 'statusCode': 400,
                 'body': "Missing JSON request body",
+                **CORS_HEADERS,
             }
         if base64_encoded:
             body = base64.b64decode(body).decode("utf-8")
@@ -26,10 +34,15 @@ def handler(event, context):
         return {
             'statusCode': 400,
             'body': "Invalid JSON request body",
+            **CORS_HEADERS,
         }
 
     code = body.get("code", "")
+    top = body.get("top", None)
+
     synthesis_script = body.get("syn_script", DEFAULT_SYNTHESIS_SCRIPT)
+    if "hierarchy " not in synthesis_script:
+        synthesis_script = (f"hierarchy -top {top}; " if top else "hierarchy -auto-top; ") + synthesis_script
     output_file = Path("/tmp", f"{datetime.now().strftime('%Y%m%d%H%M%S')}-{random.randint(0, 1000000)}.json")
 
     with NamedTemporaryFile(mode="w", suffix=".sv") as f_code:
@@ -40,4 +53,5 @@ def handler(event, context):
     return {
         'statusCode': 200,
         'body': output_file.read_text(),
+        **CORS_HEADERS,
     }

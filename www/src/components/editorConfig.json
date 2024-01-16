@@ -1,0 +1,34 @@
+{
+  "paperConfig": {
+    "p": 2,
+    "display": "flex",
+    "flexDirection": "column",
+    "height": "80vh",
+    "minHeight": "600px"
+  },
+
+  "editorHeight": {
+    "min": "65vh",
+    "max": "600px"
+  },
+
+  "basicConfig": {
+    "lineNumbers": true,
+    "highlightActiveLineGutter": true,
+    "foldGutter": true,
+    "dropCursor": true,
+    "allowMultipleSelections": true,
+    "indentOnInput": true,
+    "bracketMatching": true,
+    "closeBrackets": true,
+    "autocompletion": true,
+    "rectangularSelection": true,
+    "highlightActiveLine": true,
+    "highlightSelectionMatches": true,
+    "closeBracketsKeymap": true,
+    "searchKeymap": true,
+    "foldKeymap": true,
+    "completionKeymap": true,
+    "tabSize": 4
+  }
+}
