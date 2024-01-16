@@ -26,10 +26,11 @@ export default function PythonEditor(props) {
             <Paper sx={editorConfig.paperConfig}>
                 <Grid container width={"100%"} justifyContent="space-between"
                       alignItems="flex-start">
-                    <Grid item xs={10}>
-                        <Typography variant="h5">Python Code</Typography><br/>
+                    <Grid item xs={9}>
+                        <Typography variant="h5">Python Code</Typography>
+                        <Typography variant="h6">Top Module Name: Top</Typography>
                     </Grid>
-                    <Grid item xs={2} sx={{textAlign: 'right'}}>
+                    <Grid item xs={3} sx={{textAlign: 'right'}}>
                         <Button variant="contained" color="primary" onClick={(e) => {
                             onElaborate(pyContext.code)
                         }}>Elaborate</Button>

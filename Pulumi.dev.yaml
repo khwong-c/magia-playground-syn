@@ -1,2 +1,4 @@
 config:
   aws:region: eu-west-2
+  domain: magia-playground-dev.coolpay64.net
+  dns-zone: coolpay64.net

@@ -22,10 +22,10 @@ export default function NetlistViewer(props) {
             <Paper sx={editorConfig.paperConfig}>
                 <Grid container width={"100%"} justifyContent="space-between"
                       alignItems="center">
-                    <Grid item xs={8}>
-                        <Typography variant="h5">Netlist</Typography><br/>
+                    <Grid item xs={5}>
+                        <Typography variant="h5">Netlist</Typography>
                     </Grid>
-                    <Grid item xs={3} sx={{textAlign: 'right'}}>
+                    <Grid item xs={5} sx={{textAlign: 'right'}}>
                         <FormControl fullWidth>
                             <Select
                                 color="primary"
@@ -47,7 +47,7 @@ export default function NetlistViewer(props) {
                         </FormControl>
 
                     </Grid>
-                    <Grid item xs={1} sx={{textAlign: 'right', alignContent: 'center'}}>
+                    <Grid item xs={2} sx={{textAlign: 'right', alignContent: 'center'}}>
                         <Button
                             variant="contained" color="primary" disabled={!Object.keys(props.netlist).length}
                             onClick={(e) => {

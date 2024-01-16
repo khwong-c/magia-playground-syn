@@ -20,6 +20,7 @@ import MemoryIcon from '@mui/icons-material/Memory';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import FindInPageIcon from '@mui/icons-material/FindInPage';
 
 import ExampleMenu from './components/ExampleMenu';
 import PythonEditor from "./components/PythonEditor";
@@ -289,6 +290,14 @@ export default function App() {
                                     <MenuBookIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Syntax Doc"/>
+                            </ListItemButton>
+                            <ListItemButton onClick={(e) => {
+                                window.open("https://github.com/khwong-c/magia-playground-syn")
+                            }}>
+                                <ListItemIcon>
+                                    <FindInPageIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Code of this App"/>
                             </ListItemButton>
                             <Divider/>
                             <ExampleMenu context={PyCodeContext}/>
