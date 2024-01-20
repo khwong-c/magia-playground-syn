@@ -7,3 +7,4 @@ venv/
 /function/magia2sv/**.dist-info/
 .idea
 Pulumi.dev.yaml
+Pulumi.prod.yaml

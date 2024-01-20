@@ -71,10 +71,10 @@ def handler(event, context):
         exec_builtins["__import__"] = wrapped_import
         exec_global["__builtins__"] = exec_builtins
 
-        compile(code, "<string>", "exec")
+        compile(code, "<code>", "exec")
         exec(code, exec_global)
 
-        code_elaborate = compile(f"__top_module__ = {top}(name='{top}')", "<string>", "exec")
+        code_elaborate = compile(f"__top_module__ = {top}(name='{top}')", "<elaborator>", "exec")
         exec(code_elaborate, exec_global)
         top_module = exec_global["__top_module__"]
 
