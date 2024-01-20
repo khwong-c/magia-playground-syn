@@ -3,6 +3,6 @@ all:
 	cd function/yosys2digital && npm run build
 	cd function/yosys2svg && npm run build
 	cd www/src/examples && ./compile_index.py
-	cd www/ && yarn run build
+	cd www/ && yarn run release
 deploy:
 	pulumi up -y

@@ -276,7 +276,7 @@ export default function App() {
                         <Divider/>
                         <List component="nav">
                             <ListItemButton onClick={(e) => {
-                                window.open("https://www.github.com/khwong-c/syn-magia")
+                                window.open("https://www.github.com/magia-hdl/magia")
                             }}>
                                 <ListItemIcon>
                                     <GitHubIcon/>
@@ -284,7 +284,7 @@ export default function App() {
                                 <ListItemText primary="Project GitHub"/>
                             </ListItemButton>
                             <ListItemButton onClick={(e) => {
-                                window.open("https://github.com/khwong-c/syn-magia/blob/main/docs/syntax.md")
+                                window.open("https://github.com/magia-hdl/magia/blob/main/docs/syntax.md")
                             }}>
                                 <ListItemIcon>
                                     <MenuBookIcon/>
@@ -292,7 +292,7 @@ export default function App() {
                                 <ListItemText primary="Syntax Doc"/>
                             </ListItemButton>
                             <ListItemButton onClick={(e) => {
-                                window.open("https://github.com/khwong-c/magia-playground-syn")
+                                window.open("https://github.com/magia-hdl/magia-playground-syn")
                             }}>
                                 <ListItemIcon>
                                     <FindInPageIcon/>
