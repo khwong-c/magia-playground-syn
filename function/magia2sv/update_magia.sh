@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pip install -t . --upgrade syn-magia
+pip install -t . --upgrade magia-hdl
